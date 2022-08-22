@@ -1,0 +1,107 @@
+<%- include('../layouts/header.html') %>
+    <div class="container-sm" style="border: 1px solid;background-color: rgb(62, 80, 2);width: 100%;">
+        <div class="container">
+            <nav class="navbar navbar-light " style="background-color: rgb(62, 80, 2);width: 100%;">
+                <div class="container-fluid">
+                    <ul class="ul">
+                        <li>
+                            <h1 style="font-size: 20px;color: aliceblue;">caja-lite</h1>
+                        </li>
+                        <li>mode <i class="bi bi-file-arrow-up-fill" style="color:  rgb(18, 23, 1);"></i></li>
+                    </ul>
+                </div>
+            </nav>
+        </div>
+        <div class="row align-items-start p-5" style="background-color: rgb(8, 8, 8);">
+            <% if (judul==='album' ) { %>
+
+                <div class="anchor col-sm-4">
+                    <a href="/gambar" style="background-color: rgb(8, 8, 8);border: 0px solid  rgb(8, 8, 8) ;">
+
+                        <div class="card mb-2 cardBgc" style="width: 200px;margin-left: 20%;">
+                            <h5 class=" card-title m-2">
+                                gambar
+                            </h5>
+                            <img src="img/code.png" class="card-img-top" alt="album rusak" width="200px">
+                        </div>
+                    </a>
+                </div>
+                <div class="anchor col-sm-4">
+                    <a href="/vidio" style="background-color: rgb(8, 8, 8);border: 0px solid  rgb(8, 8, 8) ;">
+
+                        <div class="card mb-2 cardBgc" style="width: 200px;margin:0% 10%;">
+                            <h5 class="card-title m-2">vidio</h5>
+                            <img src="img/code.png" class="card-img-top" alt="album rusak" width="200px">
+                        </div>
+                    </a>
+                </div>
+                <div class="anchor col-sm-4">
+                    <a href="/music" style="background-color: rgb(8, 8, 8);border: 0px solid  rgb(8, 8, 8) ;">
+                        <div class="card mb-2 cardBgc" style=" width: 200px; margin-right: 20%;">
+                            <h5 class="card-title m-2">music</h5>
+                            <img src="img/code.png" class="card-img-top" alt="album rusak" width="200px">
+                        </div>
+                    </a>
+                </div>
+                <% } else if(judul==='gambar' ){%>
+                    <div class="container" style="background-color: rgb(77, 76, 76);padding:20px;">
+                        <div class="container">
+                            <div class="row g-2">
+                                <% dataGambar.forEach((data,index)=> { %>
+
+                                    <div class="col-sm-3 p-2" ">
+                                        <form action=" /gambar/<%=data.tanda%>">
+                                        <button style=" background-color: rgb(62, 80, 2) ;">
+                                            <img src=" img/<%=data.nama%>" class=" img-thumbnail p-2" alt="gambar rusak"
+                                                style="background-color: rgb(62, 80, 2);border: 0px;">
+                                        </button>
+
+                                        </form>
+                                    </div>
+                                    <% }) %>
+
+                            </div>
+                        </div>
+                    </div>
+                    <% } else if(judul==='gambar' + dataGambar2.tanda ){%>
+                        <div class="container" style="background-color: rgb(77, 76, 76);padding:20px;">
+                            <div class="container">
+                                <div class="row g-2">
+                                    <button style=" background-color: rgb(62, 80, 2) ;" class="btn btn-primary"
+                                        data-bs-toggle="modal" data-bs-target="#exampleModal">
+                                        <img src="../img/<%=dataGambar2.nama%>" class="img-fluid" alt="...">
+                                    </button>
+
+                                    <!-- Modal -->
+                                    <div class="modal fade" id="exampleModal" tabindex="-1"
+                                        aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                        <div class="modal-dialog modal-dialog-centered">
+                                            <div class="modal-content">
+                                                <div class="modal-header">
+                                                    <h5 class="modal-title" id="exampleModalLabel">
+                                                        <%= dataGambar2.tanda %>
+                                                    </h5>
+                                                    <button type="button" action="/gambar/<%=dataGambar2.tanda%> "
+                                                        method="post" class="btn-close" data-bs-dismiss="modal"
+                                                        aria-label="Close"></button>
+                                                </div>
+                                                <div class="modal-body">
+                                                    <img src="../img/<%=dataGambar2.nama%>" class="img-fluid" alt="...">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="a m-2">
+                                <a href="/gambar" class="btn btn-danger" style="width: 100%;">keluar</a>
+                            </div>
+                        </div>
+                        <% } else if(judul==='music' ){%>
+                            <% } %>
+
+
+        </div>
+    </div>
+
+    <%- include('../layouts/footer.html') %>

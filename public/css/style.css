@@ -1,0 +1,18 @@
+.cardBgc {
+    background-color: rgb(62, 80, 2);
+    color: aliceblue;
+}
+
+.ul li {
+    display: inline-block;
+    margin-left: 20px;
+    color: aliceblue;
+}
+
+.anchor a {
+    text-decoration: none;
+}
+
+body {
+    margin-bottom: 1000px;
+}
