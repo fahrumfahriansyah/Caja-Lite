@@ -14,5 +14,41 @@
 }
 
 body {
-    margin-bottom: 1000px;
+    background-image: url(https://upload.wikimedia.org/wikipedia/commons/thumb/d/d4/VirtualBox_Linux_Mint_Desktop_ENG_14_02_2021_13_44_42.png/1200px-VirtualBox_Linux_Mint_Desktop_ENG_14_02_2021_13_44_42.png);
+}
+
+.respons {
+    width: 70vw;
+}
+
+@media (max-width: 1300px) {
+    .respons {
+        width: 73vw;
+        padding: 2vw;
+    }
+
+}
+
+@media (max-width: 1000px) {
+    .respons {
+        width: 58vw;
+        padding: 2vw;
+    }
+
+}
+
+@media (max-width: 890px) {
+    .respons {
+        width: 68vw;
+        padding: 2vw;
+    }
+
+}
+
+@media (max-width: 500px) {
+    .respons {
+        width: 50vw;
+        padding: 2vw;
+    }
+
 }

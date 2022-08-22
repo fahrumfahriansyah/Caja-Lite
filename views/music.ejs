@@ -1,0 +1,71 @@
+<%- include('../layouts/header.html') %>
+    <div class="container-sm" style="border: 1px solid;background-color: rgb(62, 80, 2);width: 100%;">
+        <div class="container">
+            <nav class="navbar navbar-light " style="background-color: rgb(62, 80, 2);width: 100%;">
+                <div class="container-fluid">
+                    <ul class="ul" style="display: inline-block;">
+
+                        <li style="display: inline-block;" class="m-2">
+                            <% if (judul==='music' ) { %>
+                                <a href="/"><i class="bi bi-arrow-left" style="color: white;"></i></a>
+                                <%}%>
+                        </li>
+
+                        <li style="display: inline-block;" class="m-2">
+                            <h1 style="font-size: 20px;color: aliceblue;">caja-lite</h1>
+                        </li>
+                        <li style="display: inline-block;" class="m-2">mode <i class="bi bi-file-arrow-up-fill"
+                                style="color:  rgb(18, 23, 1);"></i>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+        </div>
+        <div class="row align-items-start p-5" style="background-color: rgb(8, 8, 8);">
+            <div class="container" style="background-color: rgb(77, 76, 76);padding:20px;">
+
+                <% if (judul==='music' ) { %>
+
+                    <div class="container">
+                        <div class="row g-2">
+                            <div class="col p-2">
+                                <ul class="list-group">
+                                    <% dataMusic.forEach((data,index)=> { %>
+                                        <form action="/music/<%=data.tanda%>">
+                                            <button style=" background-color: rgb(62, 80, 2) ;">
+                                                <li class="list-group-item respons"
+                                                    style="display: block;background-color: rgb(79, 79, 79);color: rgb(244, 246, 248); text-align: start;">
+                                                    <%= data.tanda %>
+                                                </li>
+                                            </button>
+                                        </form>
+                                        <% }) %>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <% }else if(judul==='music-' + dataMusic2.tanda){%>
+                        <div class="col-sm-6 p-2 rounded mx-auto d-block">
+                            <div class="card text-center" style="border: 1px solid  rgb(62, 80, 2);">
+                                <div class="card-header" style="background-color:  rgb(62, 80, 2);color: aliceblue;">
+                                    Music
+                                </div>
+                                <div class="card-body">
+                                    <h5 class="card-title">
+                                        <%=dataMusic2.tanda%>
+                                    </h5>
+                                    <audio class="card-text" autoplay controls src="../audio/<%=dataMusic2.nama%>"
+                                        type="audio/mp3" width="100%"></audio>
+                                    <br>
+                                    <a href="/music" class="btn btn-danger">kembali</a>
+
+                                </div>
+                                <div class="card-footer text-muted">
+                                    <%=dataMusic2.nama %>
+                                </div>
+                            </div>
+                        </div>
+                        <%} %>
+            </div>
+        </div>
+        <%- include('../layouts/footer.html') %>
