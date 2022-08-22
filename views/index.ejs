@@ -4,10 +4,18 @@
             <nav class="navbar navbar-light " style="background-color: rgb(62, 80, 2);width: 100%;">
                 <div class="container-fluid">
                     <ul class="ul">
-                        <li>
-                            <h1 style="font-size: 20px;color: aliceblue;">caja-lite</h1>
-                        </li>
-                        <li>mode <i class="bi bi-file-arrow-up-fill" style="color:  rgb(18, 23, 1);"></i></li>
+
+                        <% if (judul==='gambar' ) { %>
+                            <li>
+                                <a href="/"><i class="bi bi-arrow-left" style="color: white;"></i></a>
+                            </li>
+                            <%}%>
+
+                                <li>
+                                    <h1 style="font-size: 20px;color: aliceblue;">caja-lite</h1>
+                                </li>
+                                <li>mode <i class="bi bi-file-arrow-up-fill" style="color:  rgb(18, 23, 1);"></i>
+                                </li>
                     </ul>
                 </div>
             </nav>
@@ -63,7 +71,7 @@
                             </div>
                         </div>
                     </div>
-                    <% } else if(judul==='gambar' + dataGambar2.tanda ){%>
+                    <% } else if(judul==='gambar-' + dataGambar2.tanda ){%>
                         <div class="container" style="background-color: rgb(77, 76, 76);padding:20px;">
                             <div class="container">
                                 <div class="row g-2">

@@ -16,7 +16,7 @@ app.get('/gambar', (req, res) => {
 app.get('/gambar/:nama?', (req, res) => {
     const data = dataGambar2(req.params.nama)
     console.log(data);
-    res.render('index', { judul: `gambar${data.tanda}`, dataGambar: dataGambar(), dataGambar2: dataGambar2(), rl: req.url, dataGambar2: data })
+    res.render('index', { judul: `gambar-${data.tanda}`, dataGambar: dataGambar(), dataGambar2: dataGambar2(), rl: req.url, dataGambar2: data })
 
 })
 app.get('/vidio', (req, res) => {
